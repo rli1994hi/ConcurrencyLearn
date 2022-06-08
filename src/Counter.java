@@ -1,13 +1,18 @@
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Counter {
-    private final AtomicInteger count = new AtomicInteger(0);
+    private int count;
+
+    private final Lock lock = new ReentrantLock();
 
     public void increment() {
-        count.incrementAndGet();
+        lock.lock();
+        count++;
+        lock.unlock();
     }
 
     public int get() {
-        return count.get();
+        return count;
     }
 }
