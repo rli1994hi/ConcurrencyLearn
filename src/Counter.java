@@ -1,11 +1,13 @@
-public class Counter {
-    private int count;
+import java.util.concurrent.atomic.AtomicInteger;
 
-    public synchronized void increment() {
-        count++;
+public class Counter {
+    private final AtomicInteger count = new AtomicInteger(0);
+
+    public void increment() {
+        count.incrementAndGet();
     }
 
     public int get() {
-        return count;
+        return count.get();
     }
 }
