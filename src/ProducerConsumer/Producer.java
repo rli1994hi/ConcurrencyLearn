@@ -1,7 +1,6 @@
 package ProducerConsumer;
 
 import java.util.Date;
-import java.util.Queue;
 import java.util.concurrent.BlockingQueue;
 
 // Produce 1 task per sec

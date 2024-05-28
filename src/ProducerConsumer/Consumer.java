@@ -1,9 +1,8 @@
 package ProducerConsumer;
 
-import java.util.Queue;
 import java.util.concurrent.BlockingQueue;
 
-// Consume 2 tasks per sec
+// Consume 1 tasks per 2 sec
 public class Consumer implements Runnable {
     private static final int INTERVAL_MILLI_SEC = 2000;
     private final BlockingQueue<String> taskQueue;
